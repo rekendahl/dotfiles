@@ -22,7 +22,7 @@ set tags=tags;~/
 
 " This line needed to make background color work in gnome terminal 
 " Though it does "destroy" the nice background transperency I had running.
-set t_Co=256
+":set t_Co=256
 
 runtime macros/matchit.vim
 runtime syntax/verilog_systemverilog.vim
