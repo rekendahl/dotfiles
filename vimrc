@@ -24,7 +24,6 @@ set tags=tags;~/
 " Though it does "destroy" the nice background transperency I had running.
 ":set t_Co=256
 
-runtime macros/matchit.vim
 runtime syntax/verilog_systemverilog.vim
 nnoremap ' `
 nnoremap ` '
@@ -33,10 +32,17 @@ nnoremap <C-y> 3<C-y>
 
 let mapleader = ","
 
-let g:zenburn_high_Contrast=1
-set background=dark
-"set background=light
+let g:solarized_termtrans = 1
 colorscheme solarized
+call togglebg#map("<F5>") 
+
+" Yank text to the OS X clipboard
+noremap <leader>y "*y
+noremap <leader>yy "*Y
+
+" Preserve indentation while pasting text from the OS X clipboard
+noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
+
 
 " Not sure if I should keep this setting or not. It's not mappable (I think) to zsh or tmux
 " so while convinient I find that I use it too much in other programs. 

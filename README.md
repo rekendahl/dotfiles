@@ -91,4 +91,19 @@ to start with clean vim directory and add pathogen etc first. This means
 redoing systemVerilog settings but should not be too bad.
 
 
+VIM 
+---
 
+###Installing Pathogen:
+
+https://github.com/tpope/vim-pathogen
+mkdir -p ~/.vim/autoload ~/.vim/bundle; \
+curl -Sso ~/.vim/autoload/pathogen.vim \
+    https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+
+
+### Instaling Solarized
+
+https://github.com/altercation/vim-colors-solarized
+cd ~/.vim/bundle
+git clone git://github.com/altercation/vim-colors-solarized.git
