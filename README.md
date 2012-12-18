@@ -102,8 +102,10 @@ curl -Sso ~/.vim/autoload/pathogen.vim \
     https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
 
-### Instaling Solarized
+### Instaling Solarized in VIM
 
 https://github.com/altercation/vim-colors-solarized
-cd ~/.vim/bundle
-git clone git://github.com/altercation/vim-colors-solarized.git
+
+*Note! We need to add solarized (and other vim modules that uses GIT as submodules). So the install step is:
+cd ~/.vim
+git submodule add git://github.com/altercation/vim-colors-solarized.git vim/bundle/vim-colors-solarized
