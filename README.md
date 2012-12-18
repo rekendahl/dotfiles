@@ -125,3 +125,19 @@ https://github.com/altercation/vim-colors-solarized
 *Note! We need to add solarized (and other vim modules that uses GIT as submodules). So the install step is:
 cd ~/.vim
 git submodule add git://github.com/altercation/vim-colors-solarized.git vim/bundle/vim-colors-solarized
+
+
+### VIM POWERLINE
+
+This is a great looking VIM bar. See https://github.com/Lokaltog/vim-powerline for details.
+
+cd ~/Projects/dotfiles
+git submodule add git://github.com/Lokaltog/vim-powerline.git vim/bundle/vim-powerline
+
+Added this to .vimrc:
+
+set laststatus=2   " Always show the statusline
+set encoding=utf-8 " Necessary to show Unicode glyphs
+let g:Powerline_symbols = 'fancy'
+
+This makes the line work but (as expected) I need to patch the fonts. 

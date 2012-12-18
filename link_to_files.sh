@@ -22,3 +22,17 @@ cd $DOT_FILES
 git submoudle init
 git submoudle update
 cd -
+
+# Make sure we have patched fonts to make it look pretty. 
+# FIXME: For some reason it didn't work with symbolic links on the mac so I use cp -f instead.
+$font_dir = ""
+if [ "$OSTYPE" = "linux-gnu" ];
+then
+   echo "Copying Patched Powerlne Source Code Pro fonts to ~/.fonts"
+   $font_dir = "~/fonts/."
+else
+   echo "Copying Patched Powerlne Source Code Pro fonts to ~/Librarys/Fonts"
+   $font_dir = "~/Library/Fonts/."
+fi
+cp -f Projects/dotfiles/patched_powerline_fonts/vimstuff/powerline-fonts/SourceCodePro-*.otf $font_dir
+

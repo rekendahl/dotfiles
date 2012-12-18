@@ -24,6 +24,11 @@ set tags=tags;~/
 " Though it does "destroy" the nice background transperency I had running.
 ":set t_Co=256
 
+"VIM POWERLINE
+set laststatus=2   " Always show the statusline
+set encoding=utf-8 " Necessary to show Unicode glyphs
+let g:Powerline_symbols = 'fancy'
+
 runtime syntax/verilog_systemverilog.vim
 nnoremap ' `
 nnoremap ` '
