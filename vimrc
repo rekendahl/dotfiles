@@ -20,11 +20,9 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set visualbell
 set tags=tags;~/
 
-" This line needed to make background color work in gnome terminal 
-" Though it does "destroy" the nice background transperency I had running.
-":set t_Co=256
 
 "VIM POWERLINE
+set t_Co=256
 set laststatus=2   " Always show the statusline
 set encoding=utf-8 " Necessary to show Unicode glyphs
 let g:Powerline_symbols = 'fancy'
