@@ -19,7 +19,7 @@ set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set visualbell
 set tags=tags;~/
-
+set mouse=a
 
 "VIM POWERLINE
 set t_Co=256
