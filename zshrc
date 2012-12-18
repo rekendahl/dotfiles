@@ -70,13 +70,18 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 local return_status="%{$fg[red]%}%(?..⤬)%{$reset_color%}"
 RPROMPT='${return_status}%{$reset_color%}'
 
-
 # FIXME$: Perhaps no the most robust check but I need to separate between Linux at work and Macs. 
-
 if [ "$OSTYPE" = "linux-gnu" ]; then
-   PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/ekendahl/scripts:/usr/eda/synopsys/vcs/latest/bin:/usr/eda/synopsys/synplify/latest/bin:/usr/eda/synopsys/arc/ARChitect/4.19.4/bin/linux:/usr/eda/synopsys/arc/latest/MetaWare/ide/:/usr/eda/synopsys/arc/latest/MetaWare/arc/bin:/usr/eda/synopsys/coretools/latest//bin:/usr/eda/xilinx/latest/ISE_DS/common/bin/lin64:/usr/eda/xilinx/latest/ISE_DS/ISE/sysgen/bin:/usr/eda/xilinx/latest/ISE_DS/PlanAhead/bin:/usr/eda/xilinx/latest/ISE_DS/ISE/bin/lin64:/usr/eda/xilinx/latest/ISE_DS/ISE/sysgen/util:/usr/eda/xilinx/latest/ISE_DS/EDK/bin/lin64:/usr/eda/xilinx/latest/ISE_DS/EDK/gnu/microblaze/lin64/bin:/usr/eda/xilinx/latest/ISE_DS/EDK/gnu/powerpc-eabi/lin64/bin:/usr/home/ekendahl/Projects/haps/hapsmap/lin:/usr/eda/synopsys/vera/latest/vera_vD-2009.12-15_linux/bin:/home/bcharette/plx_tech/PEX_SIM_MODELS:/home/bcharette/plx_tech/PEX_SIM_MODELS/lib/linux.lib:/usr/eda/synopsys/arc/ARChitect/2.19.4/lib/linux:/usr/eda/synopsys/vera/latest/vera_vD-2009.12-15_linux/lib:/usr/eda/synopsys/vera/latest/vera_vD-2009.12-15_linux/lib/mti:/usr/eda/synopsys/vera/latest/vera_vD-2009.12-15_linux/lib/nc_vhdl:/usr/eda/synopsys/vera/latest/vera_vD-2009.12-15_linux/lib/sro:/usr/eda/synopsys/vera/latest/vera_vD-2009.12-15_linux/lib/vlog:/home/ekendahl/Projects/legacy/hsd/verification/scripts
+   PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/ekendahl/bin
 else
    PATH=/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/ekendahl/bin
 fi
-
 export PATH
+
+if [ -f "$HOME/.alias" ]; then
+   source "$HOME/.alias"
+fi
+
+if [ -f "$HOME/.zshrc_local" ]; then
+   source "$HOME/.zshrc_local"
+fi
