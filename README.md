@@ -90,6 +90,22 @@ So copied most dotfiles from work machine. Added gvimrc from macbook. Decided
 to start with clean vim directory and add pathogen etc first. This means
 redoing systemVerilog settings but should not be too bad.
 
+Submodules
+----------
+
+This project will work with submodules borrowing from other git repositories for things like VIM modules etc. This is the first time I use this concept so here are my notes:
+
+To add a submoudle you need to stand in your top directory and run (for example):
+
+git submodule add git://github.com/altercation/vim-colors-solarized.git vim/bundle/vim-colors-solarized
+
+This clones in the solarized bundle to the correct location.
+Unfortunatley once my main repository is cloned two commands needs to be executed on the remote site. I don't know how to add that automatically yet. They are:
+
+git submodule init
+git submoudle update
+
+I'm adding this to the linker script
 
 VIM 
 ---

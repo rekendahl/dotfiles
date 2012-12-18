@@ -17,3 +17,8 @@ ln -s $DOT_FILES/tmux.conf .tmux.conf
 
 mv .gvimrc .gvimrc_pre_dotfiles
 ln -s $DOT_FILES/gvimrc .gvimrc
+
+cd $DOT_FILES
+git submoudle init
+git submoudle update
+cd -
