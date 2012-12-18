@@ -10,6 +10,19 @@ These are my notes on creating a pleasant, portable IDE environment under Linux/
 
 [drbunsen]: http://www.drbunsen.org/text-triumvirate.html 
 
+Installing on a new machine
+---------------------------
+
+All the text below are notes I took while creating this dotfiles repository. Note that while these files are public they are meant as a quick way for *me* to setup a new Linux or Mac machine. The linking script is not smart at all. These are the install steps:
+
+1. You need a ~/Projects area. If you don't have it then mkdir ~/Projects.
+2. cd Projects
+3. *FOR ME:* git clone git@github.com:rekendahl/dotfiles.git *FOR ANYONE ELSE:*: git clone git://github.com/rekendahl/dotfiles.git
+4. cd ~
+5. Projects/dotfiles/link_to_files.sh
+
+*Note!* The link_to_files.sh will make a backup copy of your .dotfiles and link to the Projects/dotfiles ones. Do this on your own risk
+
 
 Goals:
 ------
