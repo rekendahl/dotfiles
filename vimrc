@@ -37,6 +37,11 @@ let mapleader = ","
 
 let g:solarized_termtrans = 1
 colorscheme solarized
+if has('gui_running')
+   set background=light
+else
+   set background=dark
+endif
 call togglebg#map("<F5>") 
 
 " Yank text to the OS X clipboard
