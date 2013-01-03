@@ -1,0 +1,15 @@
+[user]
+	name = Robert Ekendahl
+	email = robert@ekendahl.org
+[merge]
+	tool = diffconflicts
+[mergetool "diffconflicts"]
+	cmd = diffconflicts vim $BASE $LOCAL $REMOTE $MERGED
+	trustExitCode = true
+	keepBackup = false
+[diff] 
+   tool = vimdiff 
+[difftool] 
+   prompt = false
+[alias]
+	d = difftool
