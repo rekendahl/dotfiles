@@ -13,3 +13,5 @@
    prompt = false
 [alias]
 	d = difftool
+[push]
+	default = matching
