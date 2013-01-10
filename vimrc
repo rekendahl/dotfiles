@@ -55,6 +55,10 @@ noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 " Not sure if I should keep this setting or not. It's not mappable (I think) to zsh or tmux
 " so while convinient I find that I use it too much in other programs. 
 :imap jk <Esc>
+" Open files in current directory with ,e
+map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
+map ,t :tabe <C-R>=expand("%:p:h") . "/" <CR>
+map ,s :split <C-R>=expand("%:p:h") . "/" <CR>
 
 " Intuitive backspacing in insert mode
 set backspace=indent,eol,start
