@@ -38,9 +38,9 @@ let mapleader = ","
 let g:solarized_termtrans = 1
 colorscheme solarized
 if has('gui_running')
-   set background=light
-else
    set background=dark
+else
+   set background=light
 endif
 call togglebg#map("<F5>") 
 
