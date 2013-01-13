@@ -52,9 +52,11 @@ noremap <leader>yy "*Y
 noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 
 
-" Not sure if I should keep this setting or not. It's not mappable (I think) to zsh or tmux
-" so while convinient I find that I use it too much in other programs. 
-:imap jk <Esc>
+" I've decided that C-[ works better. It's standard VIM so works in almost all
+" apps that mimic VIM (including zsh). And with C remapped to CAPS LOCK it's
+" an easier combination then hitting ESC
+":imap jk <Esc>
+
 " Open files in current directory with ,e
 map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
 map ,t :tabe <C-R>=expand("%:p:h") . "/" <CR>
