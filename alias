@@ -1,0 +1,4 @@
+alias vi="vim"
+alias ls="ls -hG"
+alias lessv='/usr/share/vim/vim70/macros/less.sh'
+alias moshw='mosh linux-server-1.hopkinton.local tmux attach'
