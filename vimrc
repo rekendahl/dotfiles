@@ -96,3 +96,4 @@ endfunction
 
 inoremap <Tab> <C-R>=SuperCleverTab()<cr>
 
+set backupskip=/tmp/*,/private/tmp/*
