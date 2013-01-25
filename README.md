@@ -1,6 +1,14 @@
 dotfiles
 ========
 
+ I've recently (after 15 years of using the other edtior) come to a revelation: VIM is the best text editor, ZSH is a superiour bash, TMUX is indespensible. Solarized (light and dark) are among the absolute best colorschemes and also the most widely spread. All configured together they can make Linux a pretty decent IDE for ASIC/FPGA development. These are my configuration to make life as painless as possoble. Comments/Forks welcomed.
+
+Requirements:
+-------------
+
+
+OLD TEXT
+========
 My settings for VIM, TMUX, ZSH and other tools I use to create a great Linux based IDE environment for development. This file servesas my blog page for what I learn as I go along. I'm just beyond the novice step in VIM after using (x-)emacs for the last 15 years. So bare with me.
 
 VIM & TMUX as a LINUX IDE
