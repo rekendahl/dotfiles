@@ -85,6 +85,6 @@ if [ -f "$HOME/.alias" ]; then
    source "$HOME/.alias"
 fi
 
-if [ -f "$HOME/.zshrc_local" ]; then
-   source "$HOME/.zshrc_local"
+if [ -f "$HOME/.local_setup" ]; then
+   source "$HOME/.local_setup"
 fi
