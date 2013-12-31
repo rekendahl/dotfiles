@@ -44,6 +44,10 @@ else
 endif
 call togglebg#map("<F5>") 
 
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
+
 " Yank text to the OS X clipboard
 noremap <leader>y "*y
 noremap <leader>yy "*Y
@@ -79,21 +83,5 @@ set incsearch " ...dynamically as they are typed.
 set wildmenu
 set wildmode=list:longest,full
 nmap <silent> <leader>n :silent :nohlsearch<CR>
-
-function! SuperCleverTab()
-   if strpart(getline('.'), 0, col('.') - 1) =~ '^\s*$'
-      return "\<Tab>"
-   else
-      if &omnifunc != ''
-         return "\<C-X>\<C-O>"
-      elseif &dictionary != ''
-         return "\<C-K>"
-      else
-         return "\<C-N>"
-      endif
-   endif
-endfunction
-
-inoremap <Tab> <C-R>=SuperCleverTab()<cr>
 
 set backupskip=/tmp/*,/private/tmp/*
