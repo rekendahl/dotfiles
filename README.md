@@ -35,13 +35,12 @@ Mac:
 
 Todo:
 * VIM build from source CentOS
-* Linux Terminal solarized configuration
 * Linux Terminal Source Code Pro for PowerLine configuration
 
 Installing/Updating tools needed :
 =================================
 
-This secion goes through how to install and do basic configurations on the
+This section goes through how to install and do basic configurations on the
 tools I use day to day. Later sections will focus on configuration of the main
 tools VIM, ZSH and TMUX. But before we get there we need a little bit of
 sanity.
@@ -54,7 +53,7 @@ On a new mac the first thing I do is to install the [Alfred App][alfred]. It's
 a small app launcher that is started with `Command+<space>`. It's has all types
 of features but I mainly use it to switch between apps as I find it better then
 `Command+Tab`.  I have paid for the PowerPack bundle, as I like to support
-small *good* develeopers *but* for what I use it for mostly the free version is
+small *good* developers *but* for what I use it for mostly the free version is
 more then enough.
 
 ## iTerm2 [Mac only]
@@ -62,25 +61,25 @@ more then enough.
 Next I install [iTerm2][iterm2]. It's better terminal emulator then the
 built-in `terminal` and is easier to skin. I configure iterm2 in two ways:
 first I create two configurations for the [Solarized][solarized] dark & light
-colorschemes and then I change the font to `Source Code Pro for Powerline`.
+color schemes and then I change the font to `Source Code Pro for Powerline`.
 
 If you haven't checked out [Solarized][solarized] before I highly recommend you
 do so. It's a subtle but great color scheme for programming. Not as flashy as
-some but the contrast is just right for exented use and I find that I never
+some but the contrast is just right for extended use and I find that I never
 grow bored with the looks. I switch between using the dark and light theme with
 a slight preference for the dark version.
 
 To configure iTerm2 for solarized I do the following:
 
-* Create two Profiles for Solarized dark & light by going into `Settings->Profiles` and clicking the `+` sign.
+* Create two profiles for Solarized dark & light by going into `Settings->Profiles` and clicking the `+` sign.
 * Download the Solarized iTerm2 profiles from their [GitHub Repository](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized).  *Note!* that I download the files through the web browser and *don't* do a clone
-* For each Profile click the `Colors` tab and then `Load Presets` and import the download Profiles.
+* For each profile click the `Colors` tab and then `Load Presets` and import the download profiles.
 * I set the default profile to be dark.
 
 There are many great fonts for programming but the one I currently like is
 [Source Code Pro][sourcecodepro] from Adobe. It's an open-source font and free to
 use. Now I use some VIM/TMUX plug-ins that require special characters to be
-present. Luckily Source Code Pro has been pathched to include these. So I
+present. Luckily Source Code Pro has been patched to include these. So I
 download/install the fonts [from here]
 (https://github.com/Lokaltog/powerline-fonts/tree/master/SourceCodePro). Once
 installed I configure iterm2 to use Source Code Pro (for Powerline) and 12 or
@@ -92,7 +91,7 @@ to day tools I use.
 ## Gnome Terminal Solarized [Linux Only]
 
 This is not how I did it last time but it seems to work in a Gnome Terminal run
-the following commands.  It will create a new Profile called Solarized (and set
+the following commands.  It will create a new profile called Solarized (and set
 it as the new default).
 
 ```shell
