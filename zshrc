@@ -77,7 +77,7 @@ autoload -U compinit; compinit
 if [ "$OSTYPE" = "linux-gnu" ]; then
    PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/ekendahl/bin
 else
-   PATH=/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/ekendahl/bin
+   PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/ekendahl/bin
 fi
 export PATH
 
