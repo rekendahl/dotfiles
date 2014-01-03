@@ -41,13 +41,13 @@ source $ZSH/oh-my-zsh.sh
 #
 
 export EDITOR="vim"
-bindkey -v 
+bindkey -v
 
 # vi style incremental search
 bindkey '^R' history-incremental-search-backward
 bindkey '^S' history-incremental-search-forward
 bindkey '^P' history-search-backward
-bindkey '^N' history-search-forward  
+bindkey '^N' history-search-forward
 
 setopt AUTO_CD
 
@@ -73,11 +73,14 @@ RPROMPT='${return_status}%{$reset_color%}'
 # Added to make autojump work
 autoload -U compinit; compinit
 
-# FIXME$: Perhaps no the most robust check but I need to separate between Linux at work and Macs. 
+# FIXME$: Perhaps no the most robust check but I need to separate between Linux at work and Macs.
 if [ "$OSTYPE" = "linux-gnu" ]; then
    PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/ekendahl/bin
 else
    PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/ekendahl/bin
+   unalias run-help
+   autoload run-help
+   HELPDIR=/usr/local/share/zsh/helpfilesk
 fi
 export PATH
 
