@@ -249,7 +249,7 @@ Finally I need my own misc dotfiles to make life complete.
 
 ```shell
     git clone https://github.com/rekendahl/dotfiles.git .dotfiles
-    ln -s ./ditfiles/.zshrc
+    ln -s ./dotfiles/.zshrc
     ln -s ./dotfiles/.tmux.conf
     ln -s ./dotfiles/.alias
     ln -s ./dotfiles/.gvimrc
