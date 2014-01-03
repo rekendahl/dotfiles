@@ -16,3 +16,6 @@
 [submodule "vim/bundle/vim-numbertoggle"]
 	path = vim/bundle/vim-numbertoggle
 	url = git://github.com/jeffkreeftmeijer/vim-numbertoggle.git
+[submodule "solarized"]
+	path = solarized
+	url = https://github.com/altercation/solarized.git
