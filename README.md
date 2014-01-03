@@ -256,7 +256,14 @@ Finally I need my own misc dotfiles to make life complete.
     ln -s ./dotfiles/.bashrc
 ```
 
+Or for older git intalls (i.e. on CentOS) use:
+
+```shell
+    git clone git@github.com:rekendahl/dotfiles.git .dotfiles
+```
+
 The shell setup files all use a .local_setup that needs to be recreated for each new site.
+
 
 *DONE!*
 
