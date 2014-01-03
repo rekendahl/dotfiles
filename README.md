@@ -224,7 +224,7 @@ spend some time getting all the tools configured.
 
 ## Install [vimeda]
 
-I have forked the excellent VIM distrubution [spf13] into a EDA specific
+I have forked the excellent VIM distrubution [vim-spf13] into a EDA specific
 distrobution. Apart for being really well configured what I liked about spf13
 is that it's dirt simple to install. On mac/linux simply run (and follow the
 prompts):
