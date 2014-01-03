@@ -95,9 +95,11 @@ This is not how I did it last time but it seems to work in a Gnome Terminal run
 the following commands.  It will create a new Profile called Solarized (and set
 it as the new default).
 
+```shell
    git clone git://github.com/sigurdga/gnome-terminal-colors-solarized.git
    cd gnome-terminal-colors-solarized
    ./solarize
+```
 
 Then simply start a new terminal and it will show up all dark and nice. Your
 old "default" profile is still intact. If you run the './solarize' command
@@ -114,7 +116,9 @@ it feels cleaner and more standard linux to use.
 To install simply run the following command and follow the prompts. The tool
 will install Apple Command Line Utilities from the App Store.
 
+```shell
    ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+```
 
 *Note!* Once completed the tool asks you to run `brew doctor` *before*
 installing any packages.
@@ -129,9 +133,11 @@ steps later.
 
 Mac install:
 
+```shell
    brew install vim
    brew install macvim --devel
    brew linkapps
+```
 
 *Note1!*  `macvim --devel` is currently needed since VIM 7.4 has not been
 declared stable for MacVim as of this writing (not sure what issue is).gq}
@@ -157,11 +163,15 @@ link](https://code.google.com/p/iterm2/wiki/TmuxIntegration).
 
 Mac install:
 
+```shell
    brew install tmux
+```
 
 CentOS install:
 
+```shell
    sudo yum install tmux
+```
 
 ## ZSH
 
@@ -172,11 +182,15 @@ this.
 
 Mac install/update:
 
+```shell
    brew install zsh
+```
 
 CentOS install:
 
+```shell
    sudo yum install zsh
+```
 
 ## [Optional] Mosh
 
@@ -191,11 +205,15 @@ should not be an an issue since it's already behine a VPN of some sort.
 
 Mac install:
 
+```shell
    brew install mobile-shell
+```
 
 CentOS install:
 
+```shell
    sudo yum install mosh
+```
 
 *Note!* I had to open specific ports when I installed mosh on CentOS to make
 remote connections work. I didn't take notes but if I remember correctly mosh
@@ -211,7 +229,9 @@ distrobution. Apart for being really well configured what I liked about spf13
 is that it's dirt simple to install. On mac/linux simply run (and follow the
 prompts):
 
+```shell
     sh <(curl http://bit.ly/vimeda -L)>
+```
 
 This will download everything you need to have a great VIM session!
 
@@ -220,25 +240,26 @@ This will download everything you need to have a great VIM session!
 [Oh-My-Zsh] is another great distrobution to configure [zsh] into something
 great. It also comes with a great installer so:
 
+```shell
     curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+```
 
 ## Get/Link my misc dotfiles
 
 Finally I need my own misc dotfiles to make life complete.
 
+```shell
     git clone https://github.com/rekendahl/dotfiles.git .dotfiles
     ln -s ./ditfiles/.zshrc
     ln -s ./dotfiles/.tmux.conf
     ln -s ./dotfiles/.alias
     ln -s ./dotfiles/.gvimrc
     ln -s ./dotfiles/.bashrc
+```
 
 The shell setup files all use a .local_setup that needs to be recreated for each new site.
 
 *DONE!*
-
-Links
-=====
 
 [alfred]: http://www.alfredapp.com/
 [iterm2]: http://www.iterm2.com/
