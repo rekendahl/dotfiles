@@ -204,6 +204,39 @@ told me the command to sudo run
 At this point you have a fairly good set of tools to code within. Next let's
 spend some time getting all the tools configured.
 
+## Install [vimeda]
+
+I have forked the excellent VIM distrubution [spf13] into a EDA specific
+distrobution. Apart for being really well configured what I liked about spf13
+is that it's dirt simple to install. On mac/linux simply run (and follow the
+prompts):
+
+    sh <(curl http://bit.ly/vimeda -L)>
+
+This will download everything you need to have a great VIM session!
+
+## Install [Oh-My-Zsh]
+
+[Oh-My-Zsh] is another great distrobution to configure [zsh] into something
+great. It also comes with a great installer so:
+
+    curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+
+## Get/Link my misc dotfiles
+
+Finally I need my own misc dotfiles to make life complete.
+
+    git clone https://github.com/rekendahl/dotfiles.git .dotfiles
+    ln -s ./ditfiles/.zshrc
+    ln -s ./dotfiles/.tmux.conf
+    ln -s ./dotfiles/.alias
+    ln -s ./dotfiles/.gvimrc
+    ln -s ./dotfiles/.bashrc
+
+The shell setup files all use a .local_setup that needs to be recreated for each new site.
+
+*DONE!*
+
 Links
 =====
 
@@ -219,3 +252,4 @@ Links
 
 [vim-spf13]: http://vim.spf13.com
 [vimeda]: https://github.com/rekendahl/spf13-vimeda
+[Oh-My-Zsh]: https://github.com/robbyrussell/oh-my-zsh
