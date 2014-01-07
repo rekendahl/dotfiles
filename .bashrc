@@ -21,6 +21,6 @@ if [ -f "$HOME/.alias" ]; then
    source "$HOME/.alias"
 fi
 
-if [ -f "$HOME/.local_setup" ]; then
-   source "$HOME/.local_setup"
+if [ -f "$HOME/.local_setup.sh" ]; then
+   source "$HOME/.local_setup.sh"
 fi

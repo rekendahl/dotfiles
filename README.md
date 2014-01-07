@@ -262,7 +262,7 @@ Or for older git intalls (i.e. on CentOS) use:
     git clone git@github.com:rekendahl/dotfiles.git .dotfiles
 ```
 
-The shell setup files all use a .local_setup that needs to be recreated for each new site.
+ The shell setup files all use a .local_setup.sh that needs to be recreated for each new site.
 
 
 *DONE!*

@@ -33,7 +33,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(gitfast cp mosh tmux vi-mode yum)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -57,6 +57,13 @@ function virtualenv_info {
 
 function box_name {
     [ -f ~/.box-name ] && cat ~/.box-name || hostname -s
+}
+
+# Added to speed up prompt on Linux. Will loose the little clean/dirty status but worth it
+# See https://gist.github.com/msabramo/2355834 for details
+function git_prompt_info() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+    echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$ZSH_THEME_GIT_PROMPT_SUFFIX"
 }
 
 PROMPT='%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}$(box_name)%{$reset_color%}:%{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info) $(virtualenv_info)%(?,,%{${fg_bold[blue]}%}[%?]%{$reset_color%} ): '
@@ -88,6 +95,6 @@ if [ -f "$HOME/.alias" ]; then
    source "$HOME/.alias"
 fi
 
-if [ -f "$HOME/.local_setup" ]; then
-   source "$HOME/.local_setup"
+if [ -f "$HOME/.local_setup.sh" ]; then
+   source "$HOME/.local_setup.sh"
 fi
