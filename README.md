@@ -229,7 +229,7 @@ is that it's dirt simple to install. On mac/linux simply run (and follow the
 prompts):
 
 ```shell
-    sh <(curl http://bit.ly/vimeda -L)
+    sh <(curl http://bit.ly/vimeda-1_0 -L)>
 ```
 
 This will download everything you need to have a great VIM session!
