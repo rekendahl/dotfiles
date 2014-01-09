@@ -110,7 +110,7 @@ area for safekeeping.
 [Homebrew][homebrew] is a Mac package manager for all "missing" packages that
 Apple didn't install. There are other package managers, like
 [MacPorts](http://www.macports.org/), but I prefer [Homebrew][homebrew] since
-it feels cleaner and more standard linux to use.
+it feels cleaner and more standard Linux to use.
 
 To install simply run the following command and follow the prompts. The tool
 will install Apple Command Line Utilities from the App Store.
@@ -126,7 +126,7 @@ Once we have homebrew installed we can install/update som needed tools.
 
 ## Latest VIM
 
-I like to use the latest version of VIM. Unfortunatley CentOS 6 is stuck with
+I like to use the latest version of VIM. Unfortunately CentOS 6 is stuck with
 an old version and needs to be compiled from source. I hope to document these
 steps later.
 
@@ -223,20 +223,20 @@ spend some time getting all the tools configured.
 
 ## Install [vimeda]
 
-I have forked the excellent VIM distrubution [vim-spf13] into a EDA specific
-distrobution. Apart for being really well configured what I liked about spf13
-is that it's dirt simple to install. On mac/linux simply run (and follow the
-prompts):
+I have forked the excellent VIM distribution [vim-spf13] into a EDA specific
+distribution. Apart for being really well configured what I liked about spf13
+is that it's dirt simple to install and yet easy to configure as needed. On
+mac/Linux simply run (and follow the prompts):
 
 ```shell
-    sh <(curl http://bit.ly/vimeda -L)
+    sh <(curl http://bit.ly/vimeda-1_0 -L)>
 ```
 
 This will download everything you need to have a great VIM session!
 
 ## Install [Oh-My-Zsh]
 
-[Oh-My-Zsh] is another great distrobution to configure [zsh] into something
+[Oh-My-Zsh] is another great distribution to configure [zsh] into something
 great. It also comes with a great installer so:
 
 ```shell
@@ -251,13 +251,14 @@ Finally I need my own misc dotfiles to make life complete.
     git clone https://github.com/rekendahl/dotfiles.git .dotfiles
     ln -s .dotfiles/.zshrc
     ln -s .dotfiles/.vimrc.before.local
+    ln -s .dotfiles/.vimrc.local
     ln -s .dotfiles/.tmux.conf
     ln -s .dotfiles/.alias
     ln -s .dotfiles/.gvimrc
     ln -s .dotfiles/.bashrc
 ```
 
-Or for older git intalls (i.e. on CentOS) use:
+Or for older git installs (i.e. on CentOS) use:
 
 ```shell
     git clone git@github.com:rekendahl/dotfiles.git .dotfiles
