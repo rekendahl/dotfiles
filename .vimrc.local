@@ -1,6 +1,6 @@
 "Turn off auto closing of brackets
 let g:autoclose_on = 0
 " Configure numbers plpugin: https://github.com/myusuf3/numbers.vim
-let g:numbers_exclude += ['tagbar', 'gundo', 'minibufexpl', 'nerdtree']
+let g:numbers_exclude = ['tagbar', 'gundo', 'minibufexpl', 'nerdtree']
 nnoremap <F3> :NumbersToggle<CR>
 nnoremap <F4> :NumbersOnOff<CR>
