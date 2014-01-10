@@ -1,4 +1,25 @@
 #!/bin/bash -ex
+
+
+# Inserting this early so that oh my zsh can pick up on tools installed in /usr/local/bin/
+# FIXME$: Perhaps no the most robust check but I need to separate between Linux at work and Macs.
+if [ "$OSTYPE" = "linux-gnu" ]; then
+   PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/ekendahl/bin
+   # Added to speed up prompt on Linux. Will loose the little clean/dirty status but worth it
+   # See https://gist.github.com/msabramo/2355834 for details
+   function git_prompt_info() {
+   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+   echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$ZSH_THEME_GIT_PROMPT_SUFFIX"
+}
+else
+   PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/ekendahl/bin
+   unalias run-help
+   autoload run-help
+   HELPDIR=/usr/local/share/zsh/helpfilesk
+fi
+export PATH
+
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -59,13 +80,6 @@ function box_name {
     [ -f ~/.box-name ] && cat ~/.box-name || hostname -s
 }
 
-# Added to speed up prompt on Linux. Will loose the little clean/dirty status but worth it
-# See https://gist.github.com/msabramo/2355834 for details
-function git_prompt_info() {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-    echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$ZSH_THEME_GIT_PROMPT_SUFFIX"
-}
-
 PROMPT='%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}$(box_name)%{$reset_color%}:%{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info) $(virtualenv_info)%(?,,%{${fg_bold[blue]}%}[%?]%{$reset_color%} ): '
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}"
@@ -80,16 +94,6 @@ RPROMPT='${return_status}%{$reset_color%}'
 # Added to make autojump work
 autoload -U compinit; compinit
 
-# FIXME$: Perhaps no the most robust check but I need to separate between Linux at work and Macs.
-if [ "$OSTYPE" = "linux-gnu" ]; then
-   PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/ekendahl/bin
-else
-   PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/ekendahl/bin
-   unalias run-help
-   autoload run-help
-   HELPDIR=/usr/local/share/zsh/helpfilesk
-fi
-export PATH
 
 if [ -f "$HOME/.alias" ]; then
    source "$HOME/.alias"
