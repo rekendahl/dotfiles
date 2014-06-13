@@ -1,1 +1,2 @@
 Bundle "jeffkreeftmeijer/vim-numbertoggle.git"
+Bundle 'christoomey/vim-tmux-navigator'
