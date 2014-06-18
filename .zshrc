@@ -4,7 +4,15 @@
 # Inserting this early so that oh my zsh can pick up on tools installed in /usr/local/bin/
 # FIXME$: Perhaps no the most robust check but I need to separate between Linux at work and Macs.
 if [ "$OSTYPE" = "linux-gnu" ]; then
-   PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/ekendahl/bin
+   PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/$USER/bin
+   # Added to speed up prompt on Linux. Will loose the little clean/dirty status but worth it
+   # See https://gist.github.com/msabramo/2355834 for details
+   function git_prompt_info() {
+   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+   echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$ZSH_THEME_GIT_PROMPT_SUFFIX"
+}
+elif [ "$OSTYPE" = "cygwin" ]; then
+   PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/$USER/bin
    # Added to speed up prompt on Linux. Will loose the little clean/dirty status but worth it
    # See https://gist.github.com/msabramo/2355834 for details
    function git_prompt_info() {
@@ -20,7 +28,7 @@ fi
 export PATH
 
 
-# Path to your oh-my-zsh configuration.
+# Path to ycur oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
@@ -77,7 +85,11 @@ function virtualenv_info {
 }
 
 function box_name {
-    [ -f ~/.box-name ] && cat ~/.box-name || hostname -s
+    if [ "$OSTYPE" = "cygwin" ]; then
+        [ -f ~/.box-name ] && cat ~/.box-name || hostname
+    else
+        [ -f ~/.box-name ] && cat ~/.box-name || hostname -s
+    fi
 }
 
 PROMPT='%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}$(box_name)%{$reset_color%}:%{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info) $(virtualenv_info)%(?,,%{${fg_bold[blue]}%}[%?]%{$reset_color%} ): '
@@ -102,3 +114,8 @@ fi
 if [ -f "$HOME/.local_setup.sh" ]; then
    source "$HOME/.local_setup.sh"
 fi
+
+# PSVM Stuff:
+export PSVMPATH=/home/TEVdemo/Projects/psvm/python
+export PYTHONPATH=$PSVMPATH
+alias psvm='$PSVMPATH/launcher.py'
