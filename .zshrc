@@ -12,7 +12,8 @@ if [ "$OSTYPE" = "linux-gnu" ]; then
    echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$ZSH_THEME_GIT_PROMPT_SUFFIX"
 }
 elif [ "$OSTYPE" = "cygwin" ]; then
-   PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/$USER/bin
+   # PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/$USER/bin
+   PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/$USER/bin
    # Added to speed up prompt on Linux. Will loose the little clean/dirty status but worth it
    # See https://gist.github.com/msabramo/2355834 for details
    function git_prompt_info() {
