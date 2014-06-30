@@ -119,4 +119,3 @@ fi
 # PSVM Stuff:
 export PSVMPATH=/home/TEVdemo/Projects/psvm/python
 export PYTHONPATH=$PSVMPATH
-alias psvm='$PSVMPATH/launcher.py'
