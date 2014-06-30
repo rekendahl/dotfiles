@@ -55,7 +55,11 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 export DEFAULT_USER=ekendahl
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/ekendahl/bin"
+if [ "$OSTYPE" = "cygwin" ]; then
+    export PATH="$PATH:$HOME/bin"
+else
+    export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/ekendahl/bin"
+fi
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
