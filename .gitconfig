@@ -15,3 +15,5 @@
 	d = difftool
 [push]
 	default = matching
+[credential]
+	helper = cache
