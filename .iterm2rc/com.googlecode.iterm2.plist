@@ -686,9 +686,9 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1642 782 445 270 0 0 2560 1440 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>102 851 605 485 0 0 2560 1440 </string>
+	<string>770 711 924 485 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>24 7 1178 764 0 0 2560 1418 </string>
+	<string>131 73 650 476 0 0 1280 778 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1200 673 650 458 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1961,7 +1961,7 @@
 			<key>Log Directory</key>
 			<string></string>
 			<key>Minimum Contrast</key>
-			<real>0.49812498688697815</real>
+			<real>0.48940104246139526</real>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
@@ -2024,7 +2024,7 @@
 			<key>Silence Bell</key>
 			<true/>
 			<key>Smart Cursor Color</key>
-			<true/>
+			<false/>
 			<key>Smart Selection Rules</key>
 			<array>
 				<dict>
@@ -2991,6 +2991,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20140518</string>
+	<string>1.0.0.20140629</string>
 </dict>
 </plist>
