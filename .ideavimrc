@@ -1,0 +1,307 @@
+" https://github.com/rekendahl/dot_vim/blob/master/config.vim
+" ---------------------------------------------
+" Regular Vim Configuration (No Plugins Needed)
+" ---------------------------------------------
+
+" ---------------
+" Color
+" ---------------
+set background=dark
+colorscheme solarized
+" Force 256 color mode if available
+if $TERM =~ "-256color"
+   set t_Co=256
+endif
+
+" -----------------------------
+" File Locations
+" -----------------------------
+set backupdir=~/.vim/.backup
+set directory=~/.vim/.tmp
+set spellfile=~/.vim/spell/custom.en.utf-8.add
+" Persistent Undo
+if has('persistent_undo')
+  set undofile
+  set undodir=~/.vim/.undo
+endif
+
+" ---------------
+" UI
+" ---------------
+set ruler          " Ruler on
+set number         " Line numbers on
+set nowrap         " Line wrapping off
+set laststatus=2   " Always show the statusline
+set cmdheight=2    " Make the command area two lines high
+set encoding=utf-8
+set noshowmode     " Don't show the mode since Powerline shows it
+set title          " Set the title of the window in the terminal to the file
+if exists('+colorcolumn')
+  set colorcolumn=80 " Color the 80th column differently as a wrapping guide.
+endif
+" Disable tooltips for hovering keywords in Vim
+if exists('+ballooneval')
+  " This doesn't seem to stop tooltips for Ruby files
+  set noballooneval
+  " 100 second delay seems to be the only way to disable the tooltips
+  set balloondelay=100000
+endif
+
+" ---------------
+" Behaviors
+" ---------------
+syntax enable
+set backup             " Turn on backups
+set autoread           " Automatically reload changes if detected
+set wildmenu           " Turn on WiLd menu
+set hidden             " Change buffer - without saving
+set history=768        " Number of things to remember in history.
+set cf                 " Enable error files & error jumping.
+set clipboard+=unnamed " Yanks go on clipboard instead.
+set autowrite          " Writes on make/shell commands
+" set timeoutlen=450     " Time to wait for a command (after leader for example).
+set ttimeout
+set ttimeoutlen=100    " Time to wait for a command (after leader for example).
+set nofoldenable       " Disable folding entirely.
+set foldlevelstart=99  " I really don't like folds.
+set formatoptions=crql
+set iskeyword+=\$,-   " Add extra characters that are valid parts of variables
+set nostartofline      " Don't go to the start of the line after some commands
+set scrolloff=3        " Keep three lines below the last line when scrolling
+set gdefault           " this makes search/replace global by default
+set switchbuf=useopen  " Switch to an existing buffer if one exists
+
+" ---------------
+" Text Format
+" ---------------
+set tabstop=4
+set backspace=indent,eol,start " Delete everything with backspace
+set shiftwidth=4               " Tabs under smart indent
+set shiftround
+set cindent
+set autoindent
+set smarttab
+set expandtab
+set softtabstop=4              " Let backspace delete indent
+
+" ---------------
+" Searching
+" ---------------
+set ignorecase " Case insensitive search
+set smartcase  " Non-case sensitive search
+set incsearch  " Incremental search
+set hlsearch   " Highlight search results
+set wildignore+=*.o,*.obj,*.exe,*.so,*.dll,*.pyc,.svn,.hg,.bzr,.git,
+  \.sass-cache,*.class,*.scssc,*.cssc,sprockets%*,*.lessc,*/node_modules/*,
+  \rake-pipeline-*
+
+" ---------------
+" Visual
+" ---------------
+set showmatch   " Show matching brackets.
+set matchtime=2 " How many tenths of a second to blink
+" Show invisible characters
+set list
+
+" Show trailing spaces as dots and carrots for extended lines.
+" From Janus, http://git.io/PLbAlw
+
+" Reset the listchars
+set listchars=""
+" make tabs visible
+set listchars=tab:▸▸
+" show trailing spaces as dots
+set listchars+=trail:•
+" The character to show in the last column when wrap is off and the line
+" continues beyond the right of the screen
+set listchars+=extends:>
+" The character to show in the last column when wrap is off and the line
+" continues beyond the right of the screen
+set listchars+=precedes:<
+
+" ---------------
+" Sounds
+" ---------------
+set noerrorbells
+set novisualbell
+set t_vb=
+
+" ---------------
+" Mouse
+" ---------------
+set mousehide  " Hide mouse after chars typed
+set mouse=a    " Mouse in all modes
+
+" Better complete options to speed it up
+set complete=.,w,b,u,U
+
+" -------------------------------------------
+" Always switch to the current file directory
+" -------------------------------------------
+autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
+
+" https://github.com/rekendahl/dot_vim/blob/master/mappings.vim:
+" ----------------------------------------
+" Mappings
+" ----------------------------------------
+
+" Set leader to ,
+" Note: This line MUST come before any <leader> mappings
+let mapleader=","
+let maplocalleader = "\\"
+
+" ---------------
+" Regular Mappings
+" ---------------
+
+" Use ; for : in normal and visual mode, less keystrokes
+nnoremap ; :
+vnoremap ; :
+
+" Yank entire buffer with gy
+nnoremap gy :%y+<cr>
+
+" Select entire buffer
+nnoremap vy ggVG
+
+" Make Y behave like other capital commands.
+" Hat-tip http://vimbits.com/bits/11
+nnoremap Y y$
+
+" Just to beginning and end of lines easier. From http://vimbits.com/bits/16
+noremap H ^
+noremap L $
+
+" Create newlines without entering insert mode
+nnoremap go o<Esc>k
+nnoremap gO O<Esc>j
+
+" remap U to <C-r> for easier redo
+" from http://vimbits.com/bits/356
+nnoremap U <C-r>
+
+" Swap implementations of ` and ' jump to markers
+" By default, ' jumps to the marked line, ` jumps to the marked line and
+" column, so swap them
+nnoremap ' `
+nnoremap ` '
+
+" ---------------
+" Window Movement
+" ---------------
+nnoremap <silent> gh :WriteBufferIfNecessary<CR>:wincmd h<CR>
+nnoremap <silent> gj :WriteBufferIfNecessary<CR>:wincmd j<CR>
+nnoremap <silent> gk :WriteBufferIfNecessary<CR>:wincmd k<CR>
+nnoremap <silent> gl :WriteBufferIfNecessary<CR>:wincmd l<CR>
+
+"   4 Window Splits
+"
+"   -----------------
+"   g1 | g2 | g3 | g4
+"   -----------------
+nnoremap <silent> g1 :WriteBufferIfNecessary<CR>:wincmd t<CR>
+nnoremap <silent> g2 :WriteBufferIfNecessary<CR>:wincmd t<bar>:wincmd l<CR>
+nnoremap <silent> g3 :WriteBufferIfNecessary<CR>:wincmd t<bar>:wincmd l<bar>
+      \:wincmd l<CR>
+nnoremap <silent> g4 :WriteBufferIfNecessary<CR>:wincmd b<CR>
+
+" Previous Window
+nnoremap <silent> gp :wincmd p<CR>
+" Equal Size Windows
+nnoremap <silent> g= :wincmd =<CR>
+" Swap Windows
+nnoremap <silent> gx :wincmd x<CR>
+
+" ---------------
+" Modifer Mappings
+" ---------------
+
+" Make line completion easier.
+inoremap <C-l> <C-x><C-l>
+
+" Easier Scrolling (think j/k with left hand)
+" All variations are mapped for now until I get used to one
+" C/M/D + d (page up)
+" C/M/D + f (page down)
+nnoremap <C-j> 15gjzz
+nnoremap <C-k> 15gkzz
+vnoremap <C-j> 15gjzz
+vnoremap <C-k> 15gkzz
+
+" ---------------
+" Insert Mode Mappings
+" ---------------
+
+" Let's make escape better, together.
+inoremap jk <Esc>
+inoremap JK <Esc>
+inoremap Jk <Esc>
+inoremap jK <Esc>
+
+" ---------------
+" Leader Mappings
+" ---------------
+
+" Clear search
+noremap <silent><leader>/ :nohls<CR>
+
+" Highlight search word under cursor without jumping to next
+nnoremap <leader>h *<C-O>
+
+" Toggle spelling mode with ,s
+nnoremap <silent> <leader>s :set spell!<CR>
+
+" Quickly switch to last buffer
+nnoremap <leader>, :e#<CR>
+
+" Underline the current line with '-'
+nnoremap <silent> <leader>ul :t.\|s/./-/\|:nohls<cr>
+
+" Underline the current line with '='
+nnoremap <silent> <leader>uul :t.\|s/./=/\|:nohls<cr>
+
+" Surround the commented line with lines.
+"
+" Example:
+"          # Test 123
+"          becomes
+"          # --------
+"          # Test 123
+"          # --------
+nnoremap <silent> <leader>cul :normal "lyy"lpwv$r-^"lyyk"lP<cr>
+
+" Format the entire file
+nnoremap <leader>fef mx=ggG='x
+
+" Format a json file with Python's built in json.tool.
+" from https://github.com/spf13/spf13-vim/blob/3.0/.vimrc#L390
+nnoremap <leader>jt <Esc>:%!underscore print<CR><Esc>:set filetype=json<CR>
+nnoremap <leader>jts <Esc>:%!underscore print --strict<CR><Esc>:set filetype=json<CR>
+
+" Split window vertically or horizontally *and* switch to the new split!
+nnoremap <silent> <leader>hs :split<Bar>:wincmd j<CR>
+nnoremap <silent> <leader>vs :vsplit<Bar>:wincmd l<CR>
+
+" Close the current window
+nnoremap <silent> <leader>sc :close<CR>
+" ---------------
+" Typo Fixes
+" ---------------
+
+noremap <F1> <Esc>
+inoremap <F1> <Esc>
+cnoremap w' w<CR>
+
+" Disable the ever-annoying Ex mode shortcut key. Type visual my ass. Instead,
+" make Q repeat the last macro instead. *hat tip* http://vimbits.com/bits/263
+nnoremap Q @@
+
+" Removes doc lookup mapping because it's easy to fat finger and never useful.
+nnoremap K k
+vnoremap K k
+
+" Toggle paste mode with F5
+nnoremap <silent> <F5> :set paste!<CR>
+
+" Insert date
+iabbrev ddate <C-R>=strftime("%Y-%m-%d")<CR>
