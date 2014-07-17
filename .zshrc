@@ -55,22 +55,18 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 export DEFAULT_USER=ekendahl
 
-if [ "$OSTYPE" = "cygwin" ]; then
-    export PATH="$PATH:$HOME/bin"
-else
-    export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/ekendahl/bin"
+export PATH="$PATH:$HOME/bin"
+if [ "$OSTYPE" = "darwin13.0" ]; then
+    export PATH="/usr/local/bin:$PATH:$HOME/anaconda/bin"
 fi
-# export MANPATH="/usr/local/man:$MANPATH"
+export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-    export EDITOR='vim'
-else
-    export EDITOR='mvim'
-fi
+# Note! On mac /usr/local/bin/vim is symbolic link to mvim
+# when launched as vim it automatically starts in terminal mode
+export EDITOR='vim'
 bindkey -v
 
 # vi style incremental search
@@ -95,6 +91,6 @@ fi
 export PSVM=$HOME/Projects/psvm/python/psvm
 export TIP=$HOME/Projects/psvm/python/tip
 export TIP_SW=$HOME/Projects/TIP_SW
-export PSVMPATH=/home/$USER/Projects/psvm/python
+export PSVMPATH=$HOME/Projects/psvm/python
 export PYTHONPATH=$PSVMPATH
 
