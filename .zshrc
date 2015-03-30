@@ -88,9 +88,6 @@ if [ -f "$HOME/.local_setup.sh" ]; then
 fi
 
 # PSVM Stuff:
-export PSVM=$HOME/Projects/psvm/python/psvm
-export TIP=$HOME/Projects/psvm/python/tip
 export TIP_SW=$HOME/Projects/TIP_SW
-export PSVMPATH=$HOME/Projects/psvm/python
-export PYTHONPATH=$PSVMPATH
-
+export PSVMPATH=$HOME/Projects/psvm/
+export PYTHONPATH=$PSVMPATH:$TIP_SW/Source/PyTipTypes
