@@ -1,6 +1,5 @@
 alias vi="vim"
 alias ls="ls -hG"
-alias tmux='tmux -2'
 if [ "$OSTYPE" = "cygwin" ]; then
     alias open=cygstart
     alias devenv="/cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Visual\ Studio\ 10.0/Common7/IDE/devenv.com"
