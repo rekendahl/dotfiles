@@ -4,3 +4,6 @@ if [ "$OSTYPE" = "cygwin" ]; then
     alias open=cygstart
     alias devenv="/cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Visual\ Studio\ 10.0/Common7/IDE/devenv.com"
 fi
+
+alias zebu1ssh='ssh -Y zebu1.hopkinton.local -t ~/.linuxbrew/bin/zsh'
+alias cdpcie='cd ~/Projects/zebu_programs/examples/axi_master_uf/axi_memory_access/zebu'
