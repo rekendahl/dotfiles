@@ -52,6 +52,10 @@ plugins=(git cp mosh vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
+unalias run-help
+autoload run-help
+HELPDIR=/usr/local/share/zsh/help
+
 # User configuration
 export DEFAULT_USER=ekendahl
 
