@@ -6,6 +6,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="agnoster"
+ZSH_THEME="agnoster_no_git"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -92,6 +93,8 @@ if [ -f "$HOME/.local_setup.sh" ]; then
 fi
 
 # PSVM Stuff:
-export TIP_SW=$HOME/Projects/TIP_SW
-export PSVMPATH=$HOME/Projects/psvm/
+export TIP_SW=$HOME/local/TIP_SW
+export PSVMPATH=$HOME/local/psvm/
 export PYTHONPATH=$PSVMPATH:$TIP_SW/Source/PyTipTypes
+
+test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
