@@ -615,6 +615,8 @@
 	<true/>
 	<key>HideTab</key>
 	<true/>
+	<key>HideTabNumber</key>
+	<false/>
 	<key>HighlightTabLabels</key>
 	<true/>
 	<key>HotKeyBookmark</key>
@@ -693,9 +695,11 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>835 507 445 136 0 0 1280 777 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>294 441 606 456 0 0 2560 1440 </string>
+	<string>294 837 606 456 0 0 2560 1440 </string>
+	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
+	<string>974 949 616 174 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>6 989 570 446 0 0 2560 1440 </string>
+	<string>4 853 570 449 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1200 673 650 458 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -2336,6 +2340,8 @@
 			<integer>80</integer>
 			<key>Command</key>
 			<string></string>
+			<key>Cursor Boost</key>
+			<real>0.023833069620253167</real>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -2708,7 +2714,7 @@
 			<key>Log Directory</key>
 			<string></string>
 			<key>Minimum Contrast</key>
-			<real>0.12843651107594936</real>
+			<real>0.0</real>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
@@ -2897,6 +2903,8 @@
 			<string>/Users/ekendahl</string>
 		</dict>
 	</array>
+	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
+	<true/>
 	<key>NoSyncLastTipTime</key>
 	<real>463668525.08778298</real>
 	<key>NoSyncNeverRemindPrefsChangesCopy</key>
@@ -2905,6 +2913,10 @@
 	<true/>
 	<key>NoSyncNewWindowOrTabFromTmuxOpensTmux_selection</key>
 	<integer>0</integer>
+	<key>NoSyncSuppressAnnyoingBellOffer</key>
+	<true/>
+	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
+	<real>466440445.32561201</real>
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>453302670.024652</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
@@ -2982,11 +2994,11 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>http://iterm2.com/appcasts/testing3.xml</string>
+	<string>https://iterm2.com/appcasts/testing3.xml</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-09-20T15:20:27Z</date>
+	<date>2016-01-20T14:21:44Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -2994,7 +3006,7 @@
 	<key>ShowBookmarkName</key>
 	<true/>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
 	<key>ShowPaneTitles</key>
 	<false/>
 	<key>SmartPlacement</key>
@@ -3041,6 +3053,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.9.20150830</string>
+	<string>2.9.20160113</string>
 </dict>
 </plist>
