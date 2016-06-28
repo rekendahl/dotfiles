@@ -58,8 +58,9 @@ HELPDIR=/usr/local/share/zsh/help
 
 # User configuration
 export DEFAULT_USER=ekendahl
+export GRADLE_HOME="$HOME/Projects/gradle-2.14"
 
-export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:$HOME/bin:$GRADLE_HOME/bin"
 if [ "$OSTYPE" = "darwin13.0" ]; then
     export PATH="/usr/local/bin:$PATH:$HOME/anaconda/bin"
 fi
