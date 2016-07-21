@@ -92,6 +92,10 @@ if [ -f "$HOME/.local_setup.sh" ]; then
    source "$HOME/.local_setup.sh"
 fi
 
+# EDAPHIC
+export JAVA_HOME=/Library/Java/Home
+export PATH=$PATH:$JAVA_HOME/bin
+
 # PSVM Stuff:
 export TIP_SW=$HOME/local/TIP_SW
 export PSVMPATH=$HOME/local/psvm/
